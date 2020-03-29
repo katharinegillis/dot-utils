@@ -1,24 +1,14 @@
 #!/usr/bin/env bash
-#
-# katharinegillis/utils ellipsis package
 
-# The following hooks can be defined to customize behavior of your package:
-# pkg.install() {
-#     fs.link_files $PKG_PATH
-# }
+pkg.install() {
+    pkg.pull
+}
 
-# pkg.push() {
-#     git.push
-# }
+pkg.pull() {
+    echo -e "\e[32mUpdating utils...\e[0m"
 
-# pkg.pull() {
-#     git.pull
-# }
+    # Install htpasswd utility
+    sudo apt-get install -y apache2-utils
 
-# pkg.installed() {
-#     git.status
-# }
-#
-# pkg.status() {
-#     git.diffstat
-# }
+    echo -e "\e[32mDone utils.\e[0m"
+}
