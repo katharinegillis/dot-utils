@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 
 pkg.install() {
-    pkg.pull
+    # Install utils
+    installUtils
 }
 
 pkg.pull() {
-    echo -e "\e[32mUpdating utils...\e[0m"
+    # Pull down updates
+    git.pull
 
+    # Install utils
+    installUtils
+}
+
+installUtils() {
     # Install htpasswd utility
     sudo apt-get install -y apache2-utils
-
-    echo -e "\e[32mDone utils.\e[0m"
 }
