@@ -2,7 +2,7 @@
 
 pkg.install() {
     # Install utils
-    installUtils
+    bash $PKG_PATH/run.sh "$ELLIPSIS_SRC"
 }
 
 pkg.pull() {
@@ -10,20 +10,10 @@ pkg.pull() {
     git.pull
 
     # Install utils
-    installUtils
+    bash $PKG_PATH/run.sh "$ELLIPSIS_SRC"
 }
 
 pkg.uninstall() {
     # Uninstall utils
-    uninstallUtils
-}
-
-installUtils() {
-    # Install htpasswd utility
-    sudo apt-get install -y apache2-utils
-}
-
-uninstallUtils() {
-    # Uninstall htpasswd utility
-    sudo apt-get remove -y apache2-utils
+    bash $PKG_PATH/uninstall.sh "$ELLIPSIS_SRC"
 }
