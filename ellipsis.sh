@@ -6,8 +6,12 @@ pkg.install() {
 }
 
 pkg.pull() {
-    # Pull down updates
-    git.pull
+    # Check for updates on git
+    git remote update 2>&1 > /dev/null
+    if git.is_behind; then
+        # Pull down updates
+        git.pull
+    fi
 
     # Install utils
     bash $PKG_PATH/run.sh "$ELLIPSIS_SRC"
