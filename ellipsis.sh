@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+pkg.link() {
+    fs.link_files files
+}
+
 pkg.install() {
     # Install utils
     bash $PKG_PATH/run.sh "$ELLIPSIS_SRC"
