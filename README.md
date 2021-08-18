@@ -3,10 +3,4 @@ Install various commandline utilities:
 - apache2-utils
 
 ## Install
-Clone and symlink or install with [ellipsis][ellipsis]:
-
-```
-$ ellipsis install katharinegillis/utils
-```
-
-[ellipsis]: http://ellipsis.sh
+Installs via the [katharinegillis/dot-desktop](https://github.com/katharinegillis/dot-desktop).
