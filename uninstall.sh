@@ -2,3 +2,4 @@
 
 # Uninstall htpasswd utility
 sudo apt-get remove -y apache2-utils
+sudo apt-get -y autoremove
